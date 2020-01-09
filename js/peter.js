@@ -178,7 +178,7 @@ var view = {
     getQuestion: () => {
         return document.getElementById('question').value;
     },
-    loading: () => 
+    loading: () => {
         if (!base.alreadyShowed) {
           document.getElementById("loader").style.display = "block";
           // Time out to hide the loader again
