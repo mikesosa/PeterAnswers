@@ -30,7 +30,7 @@ var controller = {
         } else {
           controller.reset();
         }
-        
+
         if(e.key === '.'){ // Dot is the secret key
             base.answerToggle = !base.answerToggle;
             document.getElementById('petition').value += base.petitionText[len];
@@ -40,7 +40,7 @@ var controller = {
             base.answer += e.key;
             if (len < lenPredefined) { // Making sure nothing else apears if the asnwer is too long
               document.getElementById('petition').value += base.petitionText[len];
-            } 
+            }
             // console.log(base.answer);
             return false;
         } else if (e.key === "Backspace" && base.answerToggle) { // if its a backpace
@@ -76,7 +76,7 @@ var controller = {
             let randomNum = Math.floor(Math.random() * invalidResponse.length);
             return invalidResponse[randomNum];
         }
-        
+
     },
 }
 
@@ -109,7 +109,7 @@ var view = {
                   view.renderAnswer();
                   break;
           }
-          
+
       };
     },
     renderAnswer: () => {
@@ -167,23 +167,23 @@ var view = {
         var list = document.getElementsByClassName("floating-label-form-group");
         for (var i = 0; i < list.length; i++) {
           list[i].classList.add('floating-label-form-group-with-value');
-        }  
+        }
     },
     hideFloatingLabels: () => {
         var list = document.getElementsByClassName("floating-label-form-group");
         for (var i = 0; i < list.length; i++) {
           list[i].classList.remove('floating-label-form-group-with-value');
-        }   
+        }
     },
     getQuestion: () => {
         return document.getElementById('question').value;
     },
-    loading: () => { 
+    loading: () => {
         if (!base.alreadyShowed) {
           document.getElementById("loader").style.display = "block";
           // Time out to hide the loader again
           setTimeout(
-          function() 
+          function()
           {
             document.getElementById("loader").style.display = "none";
           },4000);
